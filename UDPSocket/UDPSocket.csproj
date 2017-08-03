@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2FA1796-8275-4335-B895-9378D8ECCF35}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UDPSocket</RootNamespace>
+    <AssemblyName>UDPSocket</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\CommandBase.cs" />
+    <Compile Include="Command\CommandInfo.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\UdpCommandBase.cs" />
+    <Compile Include="Common\BinaryUtil.cs" />
+    <Compile Include="Common\IpV4Helper.cs" />
+    <Compile Include="Common\ReflectCommandLoader.cs" />
+    <Compile Include="Common\SendingQueue.cs" />
+    <Compile Include="Common\SmartPool.cs" />
+    <Compile Include="Engine\ISocketServer.cs" />
+    <Compile Include="Engine\SocketListenerBase.cs" />
+    <Compile Include="Engine\SocketServerBase.cs" />
+    <Compile Include="Engine\SocketSession.cs" />
+    <Compile Include="Engine\UdpSocketListener.cs" />
+    <Compile Include="Engine\UdpSocketServer.cs" />
+    <Compile Include="Engine\UdpSocketSession.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Engine\ISocketListener.cs" />
+    <Compile Include="Protocol\IRequestInfo.cs" />
+    <Compile Include="Protocol\IRequestPacker.cs" />
+    <Compile Include="Protocol\RequestInfo.cs" />
+    <Compile Include="Protocol\UdpRequestInfo.cs" />
+    <Compile Include="Protocol\UdpRequestPacker.cs" />
+    <Compile Include="Server\AppServer.cs" />
+    <Compile Include="Server\AppServerBase.cs" />
+    <Compile Include="Server\AppSession.cs" />
+    <Compile Include="Server\IAppServer.cs" />
+    <Compile Include="Server\IAppSession.cs" />
+    <Compile Include="Server\IRequestHandler.cs" />
+    <Compile Include="Server\ISessionBase.cs" />
+    <Compile Include="Server\ISocketSession.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="TestAppServer.cs" />
+    <Compile Include="TestSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
