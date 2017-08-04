@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMD.cs" />
     <Compile Include="Command\CommandBase.cs" />
     <Compile Include="Command\CommandInfo.cs" />
     <Compile Include="Command\ICommand.cs" />

@@ -13,10 +13,7 @@ namespace UDPSocket
     {
         public override UInt16 ID
         {
-            get
-            {
-                return 1;
-            }
+            get { return (UInt16)CMD.Test; }
         }
 
         public override void ExecuteCommand(TestSession session, UdpRequestInfo requestInfo)
